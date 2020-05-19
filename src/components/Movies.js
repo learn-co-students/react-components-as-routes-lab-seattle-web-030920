@@ -2,9 +2,15 @@ import React from 'react';
 import { movies } from '../data';
 
 const Movies = () => {
+
+  const renderMovies = () => {
+    return movies.map(movie => <div>{movie.title}{ }{movie.time} <ul>{movie.genres}</ul></div>)
+  }
+  
   return (
     <div>
-        {/*{code here}*/}
+        <h1>Movies Page</h1> 
+          {renderMovies()}
     </div>
   );
 };

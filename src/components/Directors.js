@@ -2,10 +2,24 @@ import React from 'react';
 import { directors } from '../data';
 
 const Directors = () => {
+
+  const renderDirectors = () => {
+    return directors.map(director => {
+      return (<div>{director.name} {renderMovies(director)}</div>)
+    } )
+  }
+
+  const renderMovies = (director) => {
+    return director.movies.map(movie => <ul>{movie}</ul>)
+  }
+  
+  
+
   return (
     <div>
-      {/*{code here}*/}
-    </div>
+      <h1>Directors Page</h1>
+        {renderDirectors()}
+    </div> 
   );
 }
 
